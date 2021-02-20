@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+<!-- form to add a new object to the collection -->
+{% block content %}
+<div class="container">
+<h1> {{ form.title }} </h1>
+<form class="form-group" action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+        <p>
+            {{ form.object_name.label }}
+            {{ form.object_name(size=32) }}
+            {% for error in form.object_name.errors %}
+            <span style="color: red">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.object_location.label }}
+            {{ form.object_location() }}
+            {% for error in form.object_name.errors %}
+            <span style="color: red">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.object_notes.label }}
+            {{ form.object_notes() }}
+            {% for error in form.object_name.errors %}
+            <span style="color: red">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+    <p>{{ form.submit() }}</p>
+</form>
+</div>
+{% endblock %}

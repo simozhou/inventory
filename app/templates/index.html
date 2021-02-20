@@ -1,0 +1,15 @@
+{%- extends "layout.html" %}
+{%- block app_content %}
+<div class="container bg-light">
+    <h1>Inventario del branco Roccia della Pace</h1>
+</div>
+<hr>
+<div class="container">
+    <h2>Luoghi in cui cercare oggetti:</h2>
+    <ul>
+        {%for location in locations %}
+        <li><h3><a href={{ url_for('location', location_id=location.id) }}>{{location.location_name}}</a></h3></li>
+        {%endfor%}
+    </ul>
+</div>
+{% endblock -%}
